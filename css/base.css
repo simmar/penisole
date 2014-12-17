@@ -1,0 +1,620 @@
+/*------------------------------------------------------------------------------
+    CSS Document (http://www.w3.org/Style/CSS/)
+
+    project:    Project perso parralax
+    created:    18-06-2013
+    author:     simmar
+
+    summary:    PRINT
+                RESET
+                GENERIC
+                OOCSS
+
+----------------------------------------------------------------------------- */
+
+/*  =PRINT
+----------------------------------------------------------------------------- */
+@media print {
+
+}
+
+/*  =RESET
+----------------------------------------------------------------------------- */
+* { margin:0; padding:0; vertical-align:baseline; }
+
+body {
+    font-family:Arial, Verdana, Helvetica, sans-serif;
+    font-size:68.8%; /* :INFO:1em = 11px */
+    margin:0;
+    color:#fff;
+    background:#fff;
+    width: 100%;
+}
+
+input { height:auto; }
+a img, fieldset, form { border:0; }
+ins, abbr, acronym { text-decoration:none; border:0; font-style:normal; }
+a:hover ins, a:hover abbr, a:hover acronym { text-decoration:underline; }
+address { font-style:normal; }
+ul { list-style:none; }
+q:before, q:after { content:''; }
+small { font-size:0.9em; }
+input, select, textarea, button { font:1em Arial, Verdana, Helvetica, sans-serif; }
+input, textarea, select {/*not working with selects on IE6 IE7*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+textarea { overflow:auto; }
+
+sup { vertical-align:text-top; }
+
+hr,
+.accessibility {
+    position:absolute;
+    left:-9999em;
+}
+
+/*button {*/
+    /*width:auto;*/
+    /*overflow:visible;*/
+    /*border:0;*/
+    /*background:none;*/
+    /*cursor:pointer;*/
+/*}*/
+button::-moz-focus-inner { /*firefox extra padding removed*/
+    border: 0;
+    padding: 0;
+}
+input.submit {
+    width:auto !important;
+    height:auto !important;
+    cursor:pointer !important;
+    border:0 !important;
+    overflow:visible;
+}
+/* =content
+-----------------------------------------------------------------------------------*/
+#content{
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+
+/* =OOCSS (https://github.com/stubbornella/oocss)
+----------------------------------------------------------------------------- */
+/* grids : https://github.com/stubbornella/oocss/blob/master/core/grid/grids.css */
+.line:before,.line:after{content:"";display:table;}/*'line' is the container*/
+.line:after{clear:both;}
+.line{*zoom:1;}
+.unit{float:left;}/*a 'unit' is a floating block in the 'line'*/
+.size1of1{float:none;}
+.size1of2{width:50%;}
+.size1of3{width:33.33333%;}
+.size2of3{width:66.66666%;}
+.size1of4{width:25%;}
+.size3of4{width:75%;}
+.size1of5{width:20%;}
+.size2of5{width:40%;}
+.size3of5{width:60%;}
+.size4of5{width:80%;}
+.lastUnit{float:none;display:block;display:table-cell;width:9999em;*width:auto;*zoom:1;_position:relative;_left:-3px;_margin-right:-3px;}
+.ofh { overflow:hidden;zoom:1; }/*in case you don't want to use 'line' method*/
+
+/* space : https://github.com/stubbornella/oocss/blob/master/core/spacing/space.css*/
+/**
+ * Spacing classes
+ * Should be used to modify the default spacing between objects (not between nodes of the same object)
+ * Please use judiciously. You want to be using defaults most of the time, these are exceptions!
+ * <type><location><size>
+ */
+
+/* spacing helpers
+p,m = padding,margin
+a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
+s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
+*/
+
+.ptn,.pvn,.pan{padding-top:0px}
+.pts,.pvs,.pas{padding-top:5px}
+.ptm,.pvm,.pam{padding-top:10px}
+.ptl,.pvl,.pal{padding-top:20px}
+.prn,.phn,.pan{padding-right:0px}
+.prs,.phs,.pas{padding-right:5px}
+.prm,.phm,.pam{padding-right:10px}
+.prl,.phl,.pal{padding-right:20px}
+.pbn,.pvn,.pan{padding-bottom:0px}
+.pbs,.pvs,.pas{padding-bottom:5px}
+.pbm,.pvm,.pam{padding-bottom:10px}
+.pbl,.pvl,.pal{padding-bottom:20px}
+.pln,.phn,.pan{padding-left:0px}
+.pls,.phs,.pas{padding-left:5px}
+.plm,.phm,.pam{padding-left:10px}
+.pll,.phl,.pal{padding-left:20px}
+.mtn,.mvn,.man{margin-top:0px}
+.mts,.mvs,.mas{margin-top:5px}
+.mtm,.mvm,.mam{margin-top:10px}
+.mtl,.mvl,.mal{margin-top:20px}
+.mrn,.mhn,.man{margin-right:0px}
+.mrs,.mhs,.mas{margin-right:5px}
+.mrm,.mhm,.mam{margin-right:10px}
+.mrl,.mhl,.mal{margin-right:20px}
+.mbn,.mvn,.man{margin-bottom:0px}
+.mbs,.mvs,.mas{margin-bottom:5px}
+.mbm,.mvm,.mam{margin-bottom:10px}
+.mbl,.mvl,.mal{margin-bottom:20px}
+.mln,.mhn,.man{margin-left:0px}
+.mls,.mhs,.mas{margin-left:5px}
+.mlm,.mhm,.mam{margin-left:10px}
+.mll,.mhl,.mal{margin-left:20px}
+.mtxl{margin-top:25px}
+.mtxxl{margin-top:30px}
+.tac{text-align: center}
+
+/* =header
+---------------------------------------------------------*/
+#header.scrolled {
+    position:fixed;
+    height:60px;
+}
+nav {
+    background: none repeat scroll 0 0 #FFFFFF;
+    top: 0;
+    box-shadow: 0 0 6px #555555;
+    clear: both;
+    margin: 0 auto;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+#menu
+{
+    font-weight : bold;
+    font-family : Arial;
+    font-size : 12px;
+    margin: 0 auto;
+    width: 806px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+    -moz-box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+    -webkit-box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+}
+#menu li
+{
+    background-color: #f0f0f0;
+    background-image: -webkit-gradient(linear,left top, left bottom,from(#fefefe), color-stop(0.5,#f0f0f0), color-stop(0.51, #e6e6e6));
+    background-image: -moz-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+    background-image: -o-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+    background-image: -ms-linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+    background-image: linear-gradient(#fefefe 0%, #f0f0f0 50%, #e6e6e6 51%);
+
+    border-right: 1px solid rgba(9, 9, 9, 0.125);
+
+    /* Adding a 1px inset highlight for a more polished efect: */
+
+    box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
+    -moz-box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
+    -webkit-box-shadow: 1px -1px 0 rgba(255, 255, 255, 0.6) inset;
+
+    position:relative;
+    text-align : center;
+    list-style : none;
+    line-height : 21px;
+    float : left;
+}
+#menu li:after{
+
+     /*This creates a pseudo element inslide each LI*/
+
+    content:'.';
+    text-indent:-9999px;
+    overflow:hidden;
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:1;
+    opacity:0;
+
+     /*Gradients!*/
+
+    background-image:-webkit-gradient(linear, left top, right top, from(rgba(168,168,168,0.5)),color-stop(0.5,rgba(168,168,168,0)), to(rgba(168,168,168,0.5)));
+    background-image:-moz-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+    background-image:-o-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+    background-image:-ms-linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+    background-image:linear-gradient(left, rgba(168,168,168,0.5), rgba(168,168,168,0) 50%, rgba(168,168,168,0.5));
+
+     /*Creating borders with box-shadow. Useful, as they don't affect the size of the element.*/
+
+    box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff,1px 0 0 #a3a3a3,2px 0 0 #fff;
+    -moz-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff,1px 0 0 #a3a3a3,2px 0 0 #fff;
+    -webkit-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff,1px 0 0 #a3a3a3,2px 0 0 #fff;
+
+     /*This will create a smooth transition for the opacity property*/
+
+    -moz-transition:0.25s all;
+    -webkit-transition:0.25s all;
+    -o-transition:0.25s all;
+    transition:0.25s all;
+}
+#menu li:first-child{
+    border-radius: 4px 4px 4px 4px;
+    border-left: 1px solid rgba(9, 9, 9, 0.125);
+
+}
+
+#menu li,
+#menu li.selected{
+    box-shadow:1px 0 0 #a3a3a3,2px 0 0 #fff;
+    -moz-box-shadow:1px 0 0 #a3a3a3,2px 0 0 #fff;
+    -webkit-box-shadow:1px 0 0 #a3a3a3,2px 0 0 #fff;
+    border-radius:4px 4px 4px 4px  ;
+}
+
+#menu li:last-child{
+    border-radius: 4px 4px 4px 4px;
+}
+
+ /*Treating the last LI and li:after elements separately*/
+
+#menu li:last-child:after,
+#menu li.selected:last-child:after{
+    box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff;
+    -moz-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff;
+    -webkit-box-shadow:-1px 0 0 #a3a3a3,-2px 0 0 #fff;
+    border-radius:0 4px 4px 0;
+}
+
+#menu li:hover:after,
+#menu li.selected:after,
+#menu li:target:after{
+    /* This property triggers the CSS3 transition */
+    opacity:1;
+}
+#menu:hover li.selected:after,
+#menu:hover li:target:after{
+    /* Hides the targeted li when we are hovering on the UL */
+    opacity:1;
+}
+
+#menu li.selected:hover:after,
+#menu li:target:hover:after{
+    opacity:1 !important;
+}
+#menu li a{
+    color: #5d5d5d;
+    display: inline-block;
+    font: 20px/1 Lobster,Arial,sans-serif;
+    padding: 12px 15px 14px;
+    position: relative;
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+    z-index:2;
+    text-decoration:none !important;
+    white-space:nowrap;
+    text-decoration : none;
+    width : 130px;
+    transition: all 1s;
+}
+#menu li ul  /*Sous-listes*/
+{
+    position: absolute;  /*Position absolue*/
+    width: 130px;  /*Largeur des sous-listes*/
+    display:none;   /*Hop, on envoie loin du champ de vision*/
+}
+#menu li:hover ul  { height: 30px; line-height: 30px;display: block }
+
+/*  =GENERIC
+----------------------------------------------------------------------------- */
+.slide {
+    height: 1000px;
+    padding-top: 100px;
+}
+.slide_inside {
+    margin: 0 auto;
+    width: 980px;
+}
+
+
+/* = slide1
+------------------------------------------------------------*/
+
+#slide1 {
+    background: url("../img/skin/11.jpg") no-repeat fixed center 0 transparent;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+}
+#corps
+{
+    font-size:18px;
+    color:#fff;
+}
+#corps h3
+{
+    font-family: "Times New Roman", Times, serif;
+    font-size:32px;
+    font-style: italic;
+    text-align:center;
+    padding:20px 0;
+    color:#660000;
+}
+#corps p
+{
+    font-family: "Times New Roman", Times, serif;
+    padding:10px 0;
+}
+
+#corps  a:link,
+#corps  a:visited,
+#corps a:hover,
+#corps  a:active
+{
+    color: #660000;
+    text-decoration: none;
+
+}
+#corps a:hover
+{
+    background-color: #333;
+}
+
+
+/* = slide2
+------------------------------------------------------------*/
+#slide2 {
+    background: url("../img/skin/corse1.jpg") no-repeat fixed center 0 transparent;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+/* = slide3
+------------------------------------------------------------*/
+
+#slide3 {
+    background: url("../img/skin/bg_corse.jpg") no-repeat fixed center 0 transparent;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* = slide4
+------------------------------------------------------------*/
+
+
+#slide4 {
+    background: url("../img/skin/vue-terasse.jpg") no-repeat fixed center 0 transparent;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* = slide5
+------------------------------------------------------------*/
+
+#slide5 {
+    background: url("../img/skin/bg-jardin.jpg") no-repeat fixed center 0 transparent;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 1196px !important;
+}
+
+/* = slide6
+------------------------------------------------------------*/
+
+
+/*#slide6 {*/
+    /*background: url("../img/skin/vue-terasse.jpg") no-repeat fixed center 0 transparent;*/
+    /*-webkit-background-size: cover;*/
+    /*-moz-background-size: cover;*/
+    /*background-size: cover;*/
+    /*margin: 0;*/
+    /*overflow: hidden;*/
+    /*width: 100%;*/
+/*}*/
+
+
+#slide1 .slide_inside {
+    text-align: center;
+}
+#slide2 .slide_inside p {
+    text-align: justify;
+    width: 500px;
+}
+
+/* = carrousel
+-----------------------------------------------------------*/
+
+#wrapper {
+    width: 950px;
+    height: 450px;
+    margin: -250px 0 0 -475px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+#carousel-left,
+#carousel-right {
+    width: 450px;
+    height: 325px;
+    overflow: hidden;
+    position: absolute;
+    top: 65px;
+    z-index: 1;
+}
+#carousel-left {
+    left: 25px;
+}
+#carousel-right {
+    right: 25px;
+}
+#carousel-center {
+    width: 550px;
+    height: 400px;
+    overflow: hidden;
+    position: absolute;
+    top: 25px;
+    left: 200px;
+    z-index: 2;
+}
+.caroufredsel_wrapper {
+    box-shadow: 0 0 10px rgba( 0, 0, 0, 0.3 );
+}
+.caroufredsel_wrapper img {
+    display: block;
+    float: left;
+}
+#prev,
+#next {
+    background: #ccc;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 2px rgba( 0, 0, 0, 0.6 );
+    line-height: 26px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    position: absolute;
+    top: 50%;
+    z-index: 0;
+}
+#prev {
+    left: 0;
+}
+#next {
+    right: 0;
+}
+#prev:hover,
+#next:hover {
+    background: #bbb;
+}
+
+/* = footer
+------------------------------------------------------------*/
+#footer{
+    height: 350px;
+    width:100%;
+    background-color: #2A282A;
+}
+#footer h1{
+    font-family: 'Playball',cursive;
+    font-size: 40px;
+}
+#footer .seperator {
+    background-color: #8C9299;
+    height: 1px;
+    margin: 20px 0;
+    width: 960px;
+}
+#footer fieldset{
+    width: 350px;
+    float: left;
+}
+#footer .form-item label{
+    font-size: 15px;
+}
+#footer .form-item input{
+    display: block;
+    height: 20px;
+    margin: 10px 0;
+}
+#footer .commentaire{
+    width: 350px;
+    float: left;
+}
+#footer .commentaire #comment{
+
+    margin: 10px 0 0 0;
+}
+.button{
+    float: left;
+    margin-top: 29px;
+    width: 200px;
+}
+/* = bouton
+------------------------------------------------------------*/
+#bottom {
+    bottom: 140px;
+    position: fixed;
+    right: 2.5%;
+    z-index: 9;
+}
+#button-top {
+    background: url("../img/skin/sprite_pictos.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: right;
+    height: 53px;
+    opacity: 0.7;
+    text-indent: -999em;
+    width: 53px;
+}
+
+.btn-1 {
+    border: 3px solid #FFFFFF;
+    color: #FFFFFF;
+}
+.btn {
+    background: none repeat scroll 0 0 transparent;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 700;
+    letter-spacing: 1px;
+    outline: medium none;
+    padding: 25px 80px;
+    position: relative;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    width:200px;
+}
+.btn:after {
+    content: "";
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    z-index: -1;
+}
+.btn-1a:hover, .btn-1a:active {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #660000;
+}
+.button .second{
+    margin-top: 15px;
+}
+
+/*= formulaire
+--------------------------------------------------*/
+/*form errors*/
+
+.remplaced{
+    position:absolute;
+    left:-9999em;
+}
+.form .attention, .form .error, .form-classement .error {
+    color: #960B0B !important;
+}
